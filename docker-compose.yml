@@ -1,0 +1,44 @@
+version: '2'
+
+services:
+    apache:
+        build: docker/apache-php-5.6
+        image: chillter/apache-php-5.6
+        container_name: chillter_apache_php-5.6
+        ports:
+            - 30080:80
+            - 30081:8080
+        links:
+            - mariadb
+            - phpmyadmin
+            - mailcatcher
+        volumes:
+            - .:/var/www/project
+
+    mariadb:
+        image: mariadb
+        container_name: chillter_mariadb
+        ports:
+            - 33306:3306
+        environment:
+            - MYSQL_ROOT_PASSWORD=chillter
+            - MYSQL_USER=chillter
+            - MYSQL_PASSWORD=chillter
+            - MYSQL_DATABASE=chillter
+
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        container_name: chillter_phpmyadmin
+        ports:
+            - 30088:80
+        links:
+            - mariadb
+        environment:
+            - PMA_HOST=chillter_mariadb
+            - MYSQL_ROOT_PASSWORD=chillter
+
+    mailcatcher:
+        image: tophfr/mailcatcher
+        container_name: chillter_mailcatcher
+        ports:
+            - 30089:80

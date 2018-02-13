@@ -1,0 +1,8 @@
+{
+  "name": "Chillter",
+  "description": "API documentation",
+  "template": {
+    "withGenerator": true,
+    "withCompare": false
+  }
+}

@@ -1,0 +1,48 @@
+{% extends "layout.html.twig" %}
+
+{% set title = "Chills" %}
+
+{% block content %}
+    <div class="row user-list">
+        <div class="col-xs-12">
+            <br />
+            <h1 class="color-text">Chills ({{ totalCount }})</h1>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>&nbsp;</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th class="text-center">Events</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for chill in chills %}
+                    <tr>
+                        <td style="vertical-align: middle"># {{ chill.id }}</td>
+                        <td>
+                            <img src="/images/chills/{{ chill.name }}.svg" />
+                        </td>
+                        <td class="vertical-middle">
+                            {{ ('chill.' ~ chill.name)|trans }}
+                        </td>
+                        <td class="vertical-middle">
+                            {{ chill.category_name }}
+                        </td>
+                        <td class="vertical-middle text-center">
+                            {{ chill.events_count }}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+            {% include 'pagination.html.twig' with {
+                'total_count': totalCount,
+                'page': page,
+                'limit': limit
+            } %}
+        </div>
+    </div>
+{% endblock %}

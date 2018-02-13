@@ -1,0 +1,86 @@
+event.invited_by: You are invitated by %name%.
+event.updated: %name% has been modified.
+event.cancelled: %name% has been cancelled.
+event.participate: %name% participate to the event.
+event.maybe_participate: %name% maybe participate to the event.
+event.does_not_participate: %name% does not participate to the event.
+event.list.created: %name% added an item to the list.
+event.list.removed: %name% removed an item of the list.
+event.list.selected: %name% selected an item to bring.
+event.list.leaved: %name% don't bring an item anymore.
+event.spending.created: %name% added a spending.
+event.spending.removed: %name% removed a spending.
+event.message.created: %name% wrote a message.
+event.car.created: %name% added a car.
+event.car.removed: %name% removed a car.
+event.car.get_in: %name% took a seat in your car.
+event.car.get_out: %name% left your car.
+friends.request: You received a friend request.
+friends.accept: You are now friend with %name%.
+
+
+category:
+    restauration: restauration
+    culture: culture
+    sport: sport
+    loisir: recreation
+    rassemblement: gathering
+
+chill:
+    cinema: cinema
+    verre: drinks
+    restaurant: restaurant
+    course: jogging
+    vacances: holiday
+    concert: concert
+    exposition: exhibition
+    festival: festival
+    musee: museum
+    theatre: theater
+    anniversaire: birthday
+    boite: clubbing
+    cafe: coffee
+    cremaillere: housewarming
+    mariage: wedding
+    quai: quai
+    soiree: party
+    burger: burger
+    glace: ice cream
+    kebab: kebab
+    petitdejeuner: breakfast
+    pique-nique: picnic
+    pizza: pizza
+    sandwich: sandwich
+    sushi: sushi
+    basket: basket
+    danse: dance
+    equitation: horseback riding
+    escalade: climbing
+    fitness: fitness
+    foot: soccer
+    golf: golf
+    gym: gym
+    handball: handball
+    peche: fishing
+    petanque: boules
+    piscine: pool
+    randonnee: hiking
+    rugby: rugby
+    sportdecombat: combat sport
+    sportdeglisse: boardsport
+    sportdetire: shooting sport
+    sportdeneige: winter sport
+    sportdevague: water sport
+    tennis: tennis
+    velo: biking
+    volley: volleyball
+    bateau: sailing
+    bowling: bowling
+    camping: camping
+    jeuxdesociete: board game
+    lasergame: laser game
+    parcattraction: funfair
+    plage: beach
+    promenade: promenade
+    shopping: shopping
+    weekend: weekend

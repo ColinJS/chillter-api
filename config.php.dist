@@ -1,0 +1,29 @@
+<?php
+
+return [
+    'db.options' => [
+        'driver' => 'pdo_mysql',
+        'charset'  => 'utf8',
+        'host' => 'localhost',
+        'port' => '3306',
+        'dbname' => 'chillter',
+        'user' => 'root',
+        'password' => 'root',
+    ],
+    'swiftmailer.options' => [
+        'host' => 'localhost',
+        'port' => '25',
+        'username' => '',
+        'password' => '',
+        'encryption' => null,
+        'auth_mode' => null
+    ],
+    'onesignal.options' => [
+        'application_id' => 'ThisIdIsNoSecret',
+        'key' => 'ThisKeyIsNoSecret'
+    ],
+    'sender_name' => 'Chillter',
+    'sender_email' => 'no-reply@chillter.fr',
+    'upload.directory' => "/images/",
+    'debug' => false,
+];

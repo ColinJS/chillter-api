@@ -1,0 +1,43 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+    <br />
+    <h1 class="color-text">Chillter backend dashboard</h1>
+    <p>Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+    <hr />
+    <div class="row">
+        <div class="col-sm-8">
+            <h2>Users</h2>
+            <p>
+                Total count of registered users.
+            </p>
+        </div>
+        <div class="col-sm-4 statistics-value text-right">
+            {{ users_total_count }}
+        </div>
+    </div>
+    <hr class="dashed" />
+    <div class="row">
+        <div class="col-sm-8">
+            <h2>Events</h2>
+            <p>
+                Total count of created events.
+            </p>
+        </div>
+        <div class="col-sm-4 statistics-value text-right">
+            {{ events_total_count }}
+        </div>
+    </div>
+    <hr class="dashed" />
+    <div class="row">
+        <div class="col-sm-8">
+            <h2>Messages</h2>
+            <p>
+                Total count of messages written in events chats.
+            </p>
+        </div>
+        <div class="col-sm-4 statistics-value text-right">
+            {{ messages_total_count }}
+        </div>
+    </div>
+{% endblock %}

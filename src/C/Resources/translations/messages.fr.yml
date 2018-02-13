@@ -1,0 +1,84 @@
+event.invited_by: Vous êtes invité par %name%.
+event.updated: %name% a été modifié.
+event.cancelled: %name% a été annulé.
+event.participate: %name% participe à l'évènement.
+event.maybe_participate: %name% participe peut-être à l'évènement.
+event.does_not_participate: %name% ne participe pas à l'évènement.
+event.list.created: %name% a ajouté un élément à la liste.
+event.list.removed: %name% a retiré un élement de la liste.
+event.list.selected: %name% a sélectionné un élément à apporter.
+event.list.leaved: %name% n'apporte plus un élément.
+event.spending.created: %name% a ajouté une dépense.
+event.spending.removed: %name% a supprimé une dépense.
+event.message.created: %name% a écrit un message.
+event.car.created: %name% a ajouté une voiture.
+event.car.removed: %name% a supprimé une voiture.
+event.car.get_in: %name% a pris place dans votre voiture.
+event.car.get_out: %name% s'est retiré de votre voiture.
+friends.request: Vous avez reçu une demande en ami.
+friends.accept: Vous êtes maintemant ami avec %name%.
+
+category:
+    restauration: restauration
+    culture: culture
+    sport: sport
+    loisir: recreation
+    rassemblement: gathering
+
+chill:
+    cinema: cinema
+    verre: verre
+    restaurant: restaurant
+    course: course
+    vacances: vacances
+    concert: concert
+    exposition: exposition
+    festival: festival
+    musee: musee
+    theatre: theatre
+    anniversaire: anniversaire
+    boite: boite
+    cafe: cafe
+    cremaillere: cremaillere
+    mariage: mariage
+    quai: quai
+    soiree: soiree
+    burger: burger
+    glace: glace
+    kebab: kebab
+    petitdejeuner: petit dejeuner
+    pique-nique: pique-nique
+    pizza: pizza
+    sandwich: sandwich
+    sushi: sushi
+    basket: basket
+    danse: danse
+    equitation: equitation
+    escalade: escalade
+    fitness: fitness
+    foot: foot
+    golf: golf
+    gym: gym
+    handball: handball
+    peche: peche
+    petanque: petanque
+    piscine: piscine
+    randonnee: randonnee
+    rugby: rugby
+    sportdecombat: sport de combat
+    sportdeglisse: sport de glisse
+    sportdetire: sport de tire
+    sportdevague: sport de vague
+    tennis: tennis
+    velo: velo
+    volley: volley
+    bateau: bateau
+    bowling: bowling
+    camping: camping
+    jeuxdesociete: jeux de societe
+    lasergame: laser game
+    parcattraction: parc attraction
+    plage: plage
+    promenade: promenade
+    shopping: shopping
+    weekend: weekend

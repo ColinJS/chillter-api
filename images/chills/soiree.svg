@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="2048px" height="2048px" viewBox="0 0 2048 2048" enable-background="new 0 0 2048 2048" xml:space="preserve">
+<g id="ORANGE_x5F_CHILL">
+	<circle id="WHITE_x5F_BACK_1_" fill="#FFFFFF" cx="1024" cy="1024" r="970"/>
+	
+		<ellipse id="ORANGE_x5F_CIRCLE_1_" fill="none" stroke="#F8973A" stroke-width="35" stroke-miterlimit="10" cx="1024" cy="1024" rx="969" ry="969.4"/>
+	
+		<linearGradient id="INSIDE_x5F_COLOUR_2_" gradientUnits="userSpaceOnUse" x1="1023.9995" y1="126.7998" x2="1023.9995" y2="1921.2007">
+		<stop  offset="0" style="stop-color:#FFD022"/>
+		<stop  offset="1" style="stop-color:#FAA71C"/>
+	</linearGradient>
+	<circle id="INSIDE_x5F_COLOUR_1_" fill="url(#INSIDE_x5F_COLOUR_2_)" cx="1024" cy="1024" r="897.2"/>
+</g>
+<path id="Soiree" fill="#FFFFFF" d="M1483.9,1300.5c131.1-378.8-20.6-721.1-115.4-756c0-86.1,0-156,0-156h-78v158c0,0-89,27-130,196
+	c-16,0-18,2-44,2c-9-92-95.5-140-95.5-140v-88h-80.5v88c0,0-36,6-66,48c-29-55-100-84-100-84v-180h-84c0,0,0,132.6,0,180
+	c-67.4-2.2-306,259.1-162.3,732H380.5c0,0,172,394,640,394s641-394,641-394H1483.9z M1426.5,1316.5h-207l-41.6-275.5
+	c-52,34.6-112.4,49.5-112.4,49.5v164l102,47H920.1l102-47v-164c0,0-46.1-11.4-92.4-37.3l-37.2,255.3h-237l-57-398h237.1
+	c3.1-96,66.5-144,66.5-144h134.4h14.6h134.4c0,0,74,56,66,168c-1,13.7-4.5,26.4-9.9,38.1l235,0.3L1426.5,1316.5z"/>
+</svg>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="2048px" height="2048px" viewBox="0 0 2048 2048" enable-background="new 0 0 2048 2048" xml:space="preserve">
+<g id="PINK_x5F_CHILL">
+	<circle id="WHITE_x5F_BACK" fill="#FFFFFF" cx="1024" cy="1024" r="970"/>
+	
+		<ellipse id="ORANGE_x5F_CIRCLE" fill="none" stroke="#F8973A" stroke-width="35" stroke-miterlimit="10" cx="1024" cy="1024" rx="969" ry="969.4"/>
+	
+		<linearGradient id="INSIDE_x5F_COLOUR_1_" gradientUnits="userSpaceOnUse" x1="297.5" y1="2526.2012" x2="297.4999" y2="731.7998" gradientTransform="matrix(1 0 0 -1 726.5 2653)">
+		<stop  offset="0" style="stop-color:#F27FA2"/>
+		<stop  offset="1" style="stop-color:#EF4867"/>
+	</linearGradient>
+	<circle id="INSIDE_x5F_COLOUR_5_" fill="url(#INSIDE_x5F_COLOUR_1_)" cx="1024" cy="1024" r="897.2"/>
+</g>
+<path id="Exposition" fill="#FFFFFF" d="M1689,963c-1.1-98.3-24.6-186.4-24.6-186.4H1429V451l-32-22v347.6h-252V895H989V317l-30,10
+	v568h-95.2V653.4H663V443l-37,30v180.4l0,0H492.2V1051H751v478c0,0,88,76,290,72s246-48,246-48v-422h372
+	C1659,1131,1690.3,1075,1689,963z M543,999V711h270v184h-62v104H543z M1209,1521H823v-470v-84h40.8H1145h64v164V1521z M1601,1071
+	h-314V895h-62v-52.1h376V1071z"/>
+</svg>

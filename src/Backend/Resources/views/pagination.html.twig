@@ -1,0 +1,14 @@
+<div class="text-center">
+    <ul class="pagination">
+        {% for i in 1..(total_count / limit)|round(0, 'ceil') %}
+            {% set url = path(app.request.get('_route'), {
+                page: i
+            }) %}
+
+            <li{% if i == page %} class="active"{% endif %}>
+                <a href="{{ url }}">{{ i }}</a>
+            </li>
+
+        {% endfor %}
+    </ul>
+</div>

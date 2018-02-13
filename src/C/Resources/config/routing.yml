@@ -1,0 +1,412 @@
+login:
+  path:     /login
+  methods:  [POST]
+  defaults: { _controller: chiller_controller:login }
+
+chill_list:
+  path:     /chills
+  methods:  [GET]
+  defaults: { _controller: chill_controller:getAllChills }
+
+chill_details:
+  path:     /chills/{chillId}
+  methods:  [GET]
+  defaults: { _controller: chill_controller:getChill }
+
+chiller_list:
+  path:     /chillers
+  methods:  [GET]
+  defaults: { _controller: chiller_controller:getChillerList }
+
+chiller_create:
+  path:     /chillers
+  methods:  [POST]
+  defaults: { _controller: chiller_controller:postNewChiller }
+
+chiller_details:
+  path:     /chillers/{userId}
+  methods:  [GET]
+  defaults: { _controller: chiller_controller:getChillerInfo }
+
+chiller_update:
+  path:     /chillers/{userId}
+  methods:  [PUT]
+  defaults: { _controller: chiller_controller:updateChillerInfo }
+
+chiller_update_password:
+  path:     /chillers/{userId}/update_password
+  methods:  [POST]
+  defaults: { _controller: chiller_controller:updatePassword }
+
+chiller_phone_book:
+  path:     /chillers/{userId}/phone_book
+  methods:  [POST]
+  defaults: { _controller: chiller_controller:uploadPhoneBook }
+
+chiller_picture_create:
+  path:     /chillers/{userId}/photos
+  methods:  [POST]
+  defaults: { _controller: chiller_controller:postPicture }
+
+chiller_picture_list:
+  path:     /chillers/{userId}/photos
+  methods:  [GET]
+  defaults: { _controller: chiller_controller:getPhotos }
+
+chiller_picture_enable:
+  path:     /chillers/{userId}/photos/{photoId}
+  methods:  [PUT]
+  defaults: { _controller: chiller_controller:enablePhoto }
+
+chiller_picture_delete:
+  path:     /chillers/{userId}/photos/{photoId}
+  methods:  [DELETE]
+  defaults: { _controller: chiller_controller:deletePhoto }
+
+chiller_home:
+  path:     /chillers/{userId}/home
+  methods:  [GET]
+  defaults: { _controller: chiller.home_controller:getHome }
+
+chiller_home_update:
+  path:     /chillers/{userId}/home
+  methods:  [POST]
+  defaults: { _controller: chiller.home_controller:updateHome }
+
+chiller_friend_list:
+  path:     /chillers/{userId}/friends
+  methods:  [GET]
+  defaults: { _controller: chiller_controller:getFriendsList }
+
+chiller_friend_invitation_sent:
+  path:     /chillers/{userId}/friends/invitation_sent
+  methods:  [GET]
+  defaults: { _controller: chiller_controller:getFriendsInvitationSent }
+
+chiller_friend_add:
+  path:     /chillers/{userId}/friends/{friendId}
+  methods:  [POST]
+  defaults: { _controller: chiller_controller:addFriend }
+
+chiller_friend_accept:
+  path:     /chillers/{userId}/friends/{friendId}
+  methods:  [PUT]
+  defaults: { _controller: chiller_controller:acceptFriend }
+
+chiller_friend_details:
+  path:     /chillers/{userId}/friends/{friendId}
+  methods:  [GET]
+  defaults: { _controller: chiller_controller:getFriendInfo }
+
+chiller_friend_delete:
+  path:     /chillers/{userId}/friends/{friendId}
+  methods:  [DELETE]
+  defaults: { _controller: chiller_controller:deleteFriend }
+
+chiller_friend_block:
+  path:     /chillers/{userId}/friends/{friendId}/block
+  methods:  [POST]
+  defaults: { _controller: chiller_controller:blockFriend }
+
+chiller_friend_unblock:
+  path:     /chillers/{userId}/friends/{friendId}/unblock
+  methods:  [DELETE]
+  defaults: { _controller: chiller_controller:unblockFriend }
+
+chiller_custom_chill_list:
+  path:     /chillers/{userId}/custom_chills
+  methods:  [GET]
+  defaults: { _controller: chill_controller:getCustomChills }
+
+chiller_custom_chill_get:
+  path:     /chillers/{userId}/custom_chills/{chillId}
+  methods:  [GET]
+  defaults: { _controller: chill_controller:getCustomChill }
+
+chiller_custom_chill_create:
+  path:     /chillers/{userId}/custom_chills
+  methods:  [POST]
+  defaults: { _controller: chill_controller:postCustomChill }
+
+chiller_custom_chill_put:
+  path:     /chillers/{userId}/custom_chills/{chillId}
+  methods:  [PUT]
+  defaults: { _controller: chill_controller:updateCustomChill }
+
+chiller_custom_chill_delete:
+  path:     /chillers/{userId}/custom_chills/{chillId}
+  methods:  [DELETE]
+  defaults: { _controller: chill_controller:deleteCustomChill }
+
+chiller_put_notification_token:
+  path:     /chillers/{userId}/notification_token
+  methods:  [PUT]
+  defaults: { _controller: chiller_controller:putNotificationToken }
+
+chiller_post_notification_test:
+  path:     /chillers/{userId}/notification_test
+  methods:  [POST]
+  defaults: { _controller: chiller_controller:postNotificationTest }
+
+chiller_event_participate:
+  path:     /chillers/{userId}/events/{eventId}/participate
+  methods:  [PUT]
+  defaults: { _controller: event.participant_controller:updateParticipation }
+
+chiller_event_participants_add:
+  path:     /chillers/{userId}/events/{eventId}/participants/{participantId}
+  methods:  [POST]
+  defaults: { _controller: event.participant_controller:addGuest }
+
+chiller_event_participants_delete:
+  path:     /chillers/{userId}/events/{eventId}/participants/{participantId}
+  methods:  [DELETE]
+  defaults: { _controller: event.participant_controller:deleteGuest }
+
+########################################################################################################################
+# EventController
+########################################################################################################################
+chiller_event_create:
+  path:     /chillers/{userId}/events
+  methods:  [POST]
+  defaults: { _controller: event_controller:createNewEvent }
+
+chiller_event_list:
+  path:     /chillers/{userId}/events
+  methods:  [GET]
+  defaults: { _controller: event_controller:getListEvents }
+
+chiller_event_get:
+  path:     /chillers/{userId}/events/{eventId}
+  methods:  [GET]
+  defaults: { _controller: event_controller:getDetailEvent }
+
+chiller_event_update:
+  path:     /chillers/{userId}/events/{eventId}
+  methods:  [PUT]
+  defaults: { _controller: event_controller:updateEvent }
+
+chiller_event_cancel:
+  path:     /chillers/{userId}/events/{eventId}/cancel
+  methods:  [PUT]
+  defaults: { _controller: event_controller:cancelEvent }
+
+chiller_event_hide:
+  path:     /chillers/{userId}/events/{eventId}/hide
+  methods:  [PUT]
+  defaults: { _controller: event_controller:hideEvent }
+
+chiller_event_logo_upload:
+  path:     /chillers/{userId}/events/{eventId}/logo
+  methods:  [POST]
+  defaults: { _controller: event_controller:postLogo }
+
+chiller_event_logo_delete:
+  path:     /chillers/{userId}/events/{eventId}/logo
+  methods:  [DELETE]
+  defaults: { _controller: event_controller:deleteChillPhoto }
+
+chiller_event_banner_upload:
+  path:     /chillers/{userId}/events/{eventId}/banner
+  methods:  [POST]
+  defaults: { _controller: event_controller:postBanner }
+
+chiller_event_banner_delete:
+  path:     /chillers/{userId}/events/{eventId}/banner
+  methods:  [DELETE]
+  defaults: { _controller: event_controller:deleteBanner }
+
+########################################################################################################################
+# Event\ExpenseController
+########################################################################################################################
+chiller_event_expense_list:
+  path:     /chillers/{userId}/events/{eventId}/expenses
+  methods:  [GET]
+  defaults: { _controller: event.expense_controller:getExpenses }
+
+chiller_event_expense_add:
+  path:     /chillers/{userId}/events/{eventId}/expenses
+  methods:  [POST]
+  defaults: { _controller: event.expense_controller:addExpenses }
+
+chiller_event_expense_update:
+  path:     /chillers/{userId}/events/{eventId}/expenses/{expenseId}
+  methods:  [PUT]
+  defaults: { _controller: event.expense_controller:updateExpense }
+
+chiller_event_expense_delete:
+  path:     /chillers/{userId}/events/{eventId}/expenses/{expenseId}
+  methods:  [DELETE]
+  defaults: { _controller: event.expense_controller:deleteExpense }
+
+chiller_event_expense_inheritor_create:
+  path:     /chillers/{userId}/events/{eventId}/expenses/{expenseId}/inheritors
+  methods:  [POST]
+  defaults: { _controller: event.expense_controller:addInheritors }
+
+chiller_event_expense_inheritor_delete:
+  path:     /chillers/{userId}/events/{eventId}/expenses/{expenseId}/inheritors/{inheritorId}
+  methods:  [DELETE]
+  defaults: { _controller: event.expense_controller:deleteInheritor }
+
+########################################################################################################################
+# Event\ElementController
+########################################################################################################################
+chiller_event_element_list:
+  path:     /chillers/{userId}/events/{eventId}/elements
+  methods:  [GET]
+  defaults: { _controller: event.element_controller:getElements }
+
+chiller_event_element_add:
+  path:     /chillers/{userId}/events/{eventId}/elements
+  methods:  [POST]
+  defaults: { _controller: event.element_controller:addElements }
+
+chiller_event_element_delete:
+  path:     /chillers/{userId}/events/{eventId}/elements/{elementId}
+  methods:  [DELETE]
+  defaults: { _controller: event.element_controller:deleteElement }
+
+chiller_event_element_take:
+  path:     /chillers/{userId}/events/{eventId}/elements/{elementId}/take
+  methods:  [PUT]
+  defaults: { _controller: event.element_controller:takeElement }
+
+chiller_event_element_leave:
+  path:     /chillers/{userId}/events/{eventId}/elements/{elementId}/leave
+  methods:  [PUT]
+  defaults: { _controller: event.element_controller:leaveElement }
+
+########################################################################################################################
+# Event\CarController
+########################################################################################################################
+
+chiller_event_car_list:
+  path:     /chillers/{userId}/events/{eventId}/cars
+  methods:  [GET]
+  defaults: { _controller: event.car_controller:get }
+
+chiller_event_car_create:
+  path:     /chillers/{userId}/events/{eventId}/cars
+  methods:  [POST]
+  defaults: { _controller: event.car_controller:addCar }
+
+chiller_event_car_update:
+  path:     /chillers/{userId}/events/{eventId}/cars/{carId}
+  methods:  [PUT]
+  defaults: { _controller: event.car_controller:updateCar }
+
+chiller_event_car_delete:
+  path:     /chillers/{userId}/events/{eventId}/cars/{carId}
+  methods:  [DELETE]
+  defaults: { _controller: event.car_controller:deleteCar }
+
+chiller_event_car_passengers_get_in:
+  path:     /chillers/{userId}/events/{eventId}/cars/{carId}/get_in
+  methods:  [PUT]
+  defaults: { _controller: event.car_controller:getIn }
+
+chiller_event_car_passengers_get_out:
+  path:     /chillers/{userId}/events/{eventId}/cars/{carId}/get_out
+  methods:  [PUT]
+  defaults: { _controller: event.car_controller:getOut }
+
+########################################################################################################################
+# Chill\CustomController
+########################################################################################################################
+
+chiller_custom_chill_logo_upload:
+  path:     /chillers/{userId}/custom_chills/{chillId}/logo
+  methods:  [POST]
+  defaults: { _controller: chill.custom_controller:postLogo }
+
+chiller_custom_chill_banner_upload:
+  path:     /chillers/{userId}/custom_chills/{chillId}/banner
+  methods:  [POST]
+  defaults: { _controller: chill.custom_controller:postBanner }
+
+########################################################################################################################
+# Chill\Custom\ElementController
+########################################################################################################################
+
+chiller_custom_chills_element_create:
+  path:     /chillers/{userId}/custom_chills/{customChillId}/elements
+  methods:  [POST]
+  defaults: { _controller: chill.custom.element_controller:create }
+
+chiller_custom_chills_element_update:
+  path:     /chillers/{userId}/custom_chills/{customChillId}/elements/{elementId}
+  methods:  [PUT]
+  defaults: { _controller: chill.custom.element_controller:update }
+
+chiller_custom_chills_element_delete:
+  path:     /chillers/{userId}/custom_chills/{customChillId}/elements/{elementId}
+  methods:  [DELETE]
+  defaults: { _controller: chill.custom.element_controller:delete }
+
+########################################################################################################################
+# Chill\Custom\ParticipantController
+########################################################################################################################
+
+chiller_custom_chills_participant_create:
+  path:     /chillers/{userId}/custom_chills/{customChillId}/participants/{participantId}
+  methods:  [POST]
+  defaults: { _controller: chill.custom.participant_controller:create }
+
+chiller_custom_chills_participant_delete:
+  path:     /chillers/{userId}/custom_chills/{customChillId}/participants/{participantId}
+  methods:  [DELETE]
+  defaults: { _controller: chill.custom.participant_controller:delete }
+
+########################################################################################################################
+# Chill\Custom\CarController
+########################################################################################################################
+
+chiller_custom_chills_car_create:
+  path:     /chillers/{userId}/custom_chills/{customChillId}/cars
+  methods:  [POST]
+  defaults: { _controller: chill.custom.car_controller:create }
+
+chiller_custom_chills_car_update:
+  path:     /chillers/{userId}/custom_chills/{customChillId}/cars
+  methods:  [PUT]
+  defaults: { _controller: chill.custom.car_controller:update }
+
+chiller_custom_chills_car_delete:
+  path:     /chillers/{userId}/custom_chills/{customChillId}/cars
+  methods:  [DELETE]
+  defaults: { _controller: chill.custom.car_controller:delete }
+
+########################################################################################################################
+# Chill\Custom\ExpenseController
+########################################################################################################################
+
+chiller_custom_chills_expense_create:
+  path:     /chillers/{userId}/custom_chills/{customChillId}/expenses
+  methods:  [POST]
+  defaults: { _controller: chill.custom.expense_controller:create }
+
+chiller_custom_chills_expense_delete:
+  path:     /chillers/{userId}/custom_chills/{customChillId}/expenses/{expenseId}
+  methods:  [DELETE]
+  defaults: { _controller: chill.custom.expense_controller:delete }
+
+
+########################################################################################################################
+# ResetPasswordController
+########################################################################################################################
+
+reset_password_obtain_token:
+  path:     /reset_password/obtain_token
+  methods:  [POST]
+  defaults: { _controller: reset_password_controller:obtainToken }
+
+reset_password_verify:
+  path:     /reset_password/verify
+  methods:  [POST]
+  defaults: { _controller: reset_password_controller:verify }
+
+reset_password_set:
+  path:     /reset_password/set
+  methods:  [POST]
+  defaults: { _controller: reset_password_controller:set }

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+        label {
+            display: block;
+            margin-top: 5px;
+        }
+
+        input {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+        .col {
+            float: left;
+            width: 50%;
+            font-size: 0;
+            vertical-align: top;
+            padding: 0 15px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        .col * {
+            font-size: 16px;
+        }
+        textarea {
+            min-height: 200px;
+            width: 100%;
+        }
+        dt {
+            background-color: navy;
+            color: #fff;
+            padding: 5px;
+            font-size: 14px !important;
+        }
+        dt img,
+        dt span {
+            float: left;
+            display: block;
+        }
+        dt:after {
+            content: ' ';
+            clear: both;
+            display: block;
+        }
+        dt img {
+            width: 75px;
+            height: 75px;
+            border-radius: 100%;
+        }
+        dt span {
+            padding-left: 25px;
+            line-height: 35px;
+        }
+        dt span::first-line {
+            font-weight: bold;
+        }
+        dd {
+            border-width: 0 1px 1px 1px;
+            border-style: solid;
+            margin: 0 0 15px 0;
+            border-color: navy;
+            padding: 5px;
+        }
+    </style>
+    </head>
+<body>
+    <div class="col">
+        <label for="host">Host</label>
+        <input type="text" id="host" value="localhost" />
+
+        <label for="port">Port</label>
+        <input type="number" id="port" value="30081" />
+
+        <label for="eventId">Event ID</label>
+        <input type="number" id="eventId" value="295" />
+
+        <label for="token">Token</label>
+        <input type="text" id="token" value="fJjtTzEbgaHn1nxggMRX3mLCcUfulGX+xza+6e3JTrXMRPY68tOJ0DKykJNAKeR7" />
+
+        <br/>
+
+        <button value="Connect" id="connectBtn">Connect</button>
+        <button value="Connect" id="closeBtn" disabled>Close</button>
+
+        <hr />
+
+        <label for="message">Message</label>
+        <input type="text" id="message" />
+        <button value="Send" id="sendBtn" disabled>Send</button>
+
+        <hr>
+        <label for="content">WebSocket info</label>
+        <textarea id="content"></textarea>
+    </div>
+    <div class="col">
+        <dl id="messages">
+
+        </dl>
+
+    </div>
+
+
+    <script>
+        (function() {
+            var content = document.getElementById("content");
+            var messages = document.getElementById("messages");
+            var sendBtn = document.getElementById("sendBtn");
+            var connectBtn = document.getElementById("connectBtn");
+            var closeBtn = document.getElementById("closeBtn");
+            content.value = '';
+
+            var conn;
+
+            document.getElementById('sendBtn').addEventListener('click', function(e) {
+                conn.send(document.getElementById("message").value);
+                document.getElementById("message").value = '';
+                e.preventDefault();
+            });
+
+            closeBtn.addEventListener('click', function() {
+                conn.close();
+            });
+
+            connectBtn.addEventListener('click', function() {
+                content.value = '';
+                var url = "ws://" + document.getElementById("host").value + ":" + document.getElementById("port").value + "/events/" + document.getElementById("eventId").value;
+                content.value += "Attempting to connect to " + url + "...\n";
+
+                conn = new WebSocket(url, encodeURIComponent("Bearer " + document.getElementById("token").value));
+
+                conn.onclose = function () {
+                    content.value += "Server closed the connection!\n";
+                    connectBtn.removeAttribute('disabled');
+                    closeBtn.setAttribute('disabled', 'disabled');
+                    sendBtn.setAttribute('disabled', 'disabled');
+                    messages.innerHTML = '';
+                };
+
+                conn.onopen = function(e) {
+                    content.value += "Connection established!\n";
+                    connectBtn.setAttribute('disabled', 'disabled');
+                    closeBtn.removeAttribute('disabled');
+                    sendBtn.removeAttribute('disabled');
+                };
+
+                conn.onmessage = function(e) {
+                    var data = JSON.parse(e.data);
+
+                    data instanceof Array ?  data.forEach(writeMessage) : writeMessage(data);
+                };
+
+                var writeMessage = function (message) {
+                    var dt =  document.createElement("dt");
+                    var img = document.createElement("img");
+                    var span = document.createElement("span");
+
+                    span.innerHTML = message.user.firstname + " " + message.user.lastname + "<br>" + message.creation_date;
+                    img.setAttribute("src", message.user.picture);
+                    dt.appendChild(img);
+                    dt.appendChild(span);
+                    messages.appendChild(dt);
+
+                    var dd =  document.createElement("dd");
+                    dd.innerHTML = message.content;
+                    messages.appendChild(dd);
+                };
+            });
+        })();
+    </script>
+</body>
+</html>

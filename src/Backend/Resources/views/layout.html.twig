@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{% if title is defined %}{{ title }} - {% endif %}Chillter</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="icon" type="image/svg+xml" href="/images/common/chillter-logo-color.svg">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&subset=latin-ext');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            padding-top: 5rem;
+            color: #868686;
+            font-size: 14px;
+        }
+
+        .vertical-middle {
+            vertical-align: middle !important;
+        }
+
+        .navbar-header img {
+            margin: 5px;
+            height: 40px;
+        }
+
+        .user-list img {
+            width: 50px;
+            border-radius: 50px;
+        }
+
+        .label-permission {
+            width: 100px;
+            padding: 5px 0;
+            display: inline-block;
+            text-transform: uppercase;
+        }
+
+        .statistics-value {
+            font-size: 60px;
+            font-weight: 300;
+            color: #F4741F;
+        }
+
+        /* ---------------------------- */
+        a {
+            color: #868686;
+            text-decoration: none;
+        }
+        a:hover,
+        a:focus {
+            color: #F4741F;
+            text-decoration: none;
+        }
+        h1, h2, h3 {
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        h1 {
+            font-size: 28px;
+        }
+        h2 {
+            font-size: 22px;
+        }
+        h3 {
+            font-size: 18px;
+        }
+        .navbar-fixed-top {
+            border-width: 0 0 2px;
+        }
+        .navbar-inverse {
+            background-color: #FFF;
+            border-color: #F4741F;
+            border-style: dashed;
+        }
+        .navbar-inverse .navbar-nav > li > a:focus,
+        .navbar-inverse .navbar-nav > li > a:hover {
+            color: #4d4d4d;
+        }
+        .navbar-inverse .navbar-nav > .active > a,
+        .navbar-inverse .navbar-nav > .active > a:focus,
+        .navbar-inverse .navbar-nav > .active > a:hover {
+            color: #F4741F;
+            background-color: #FFF;
+        }
+        .navbar-inverse .navbar-nav > li > a {
+            letter-spacing: 2px;
+            font-weight: 300;
+            color: #a1a1a1;
+        }
+        hr.dashed {
+            border-style: dashed;
+        }
+        .color-text {
+            color: #F4741F;
+        }
+        .pagination > .active > a, .pagination > .active > a:focus,
+        .pagination > .active > a:hover, .pagination > .active > span,
+        .pagination > .active > span:focus, .pagination > .active > span:hover {
+            background-color: #F4741F;
+            border-color: #F4741F;
+        }
+        .pagination > li > a, .pagination > li > span {
+            color: #F4741F;
+        }
+        .pagination > li > a:focus, .pagination > li > a:hover,
+        .pagination > li > span:focus, .pagination > li > span:hover {
+            color: #5A5A5A;
+        }
+        .label-permission {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+{% if not (showNavbar is defined and showNavbar == false) %}
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img src="/images/common/chillter-logo-color.svg"/>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li{% if app.request.get('_route') == 'backend_dashboard' %} class="active"{% endif %}>
+                        <a href="{{ path('backend_dashboard') }}">Dashboard</a>
+                    </li>
+                    <li{% if app.request.get('_route') == 'backend_chill_list' %} class="active"{% endif %}>
+                        <a href="{{ path('backend_chill_list') }}">Chills</a>
+                    </li>
+                    <li{% if app.request.get('_route') == 'backend_user_list' %} class="active"{% endif %}>
+                        <a href="{{ path('backend_user_list') }}">Users</a>
+                    </li>
+                    <li><a href="{{ path('backend_logout') }}">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+{% endif %}
+
+<div class="container">
+    {% block content %}{% endblock %}
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+</body>
+</html>

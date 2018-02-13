@@ -1,0 +1,15 @@
+/.idea
+/phpunit.xml
+/vendor
+/node_modules
+/build
+/doc
+/composer.lock
+/pimple.json
+/images/avatars/*
+/images/banners/*
+/images/events/*
+/images/chills/custom/*
+!/images/.gitkeep
+/config.php
+/.php_cs.cache

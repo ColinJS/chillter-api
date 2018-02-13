@@ -1,0 +1,24 @@
+backend_login:
+  path:     /backend/login
+  methods:  [GET]
+  defaults: { _controller: backend.security_controller:loginAction }
+
+backend_dashboard:
+  path:     /backend
+  methods:  [GET]
+  defaults: { _controller: backend.backend_controller:defaultAction }
+
+backend_user_list:
+  path:     /backend/users
+  methods:  [GET]
+  defaults: { _controller: backend.backend_controller:userListAction }
+
+backend_user_details:
+  path:     /backend/user/{userId}
+  methods:  [GET]
+  defaults: { _controller: backend.backend_controller:userDetailsAction }
+
+backend_chill_list:
+  path:     /backend/chills
+  methods:  [GET]
+  defaults: { _controller: backend.backend_controller:chillListAction }

@@ -1,0 +1,121 @@
+{% extends "layout.html.twig" %}
+
+{% set title = "Users" %}
+
+{% block content %}
+    <div class="row user-list">
+        <div class="col-xs-12">
+            <br />
+            <h1 class="color-text">Events created by {{ userDetails.firstname }} {{ userDetails.lastname }}</h1>
+            {% if eventsDetails is not empty %}
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th width="10%">ID</th>
+                    <th width="10%"></th>
+                    <th width="20%">Category</th>
+                    <th width="20%">Chill</th>
+                    <th width="20%">Place</th>
+                    <th width="20%" class="text-center">Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for eventsDetail in eventsDetails %}
+                    <tr>
+                        <td style="vertical-align: middle"># {{ eventsDetail.id }}</td>
+                        <td style="vertical-align: middle"><img src="/images/chills/{{ eventsDetail.chillName }}.svg" /></td>
+                        <td style="vertical-align: middle">{{ eventsDetail.categoryName }}</td>
+                        <td style="vertical-align: middle">{{ ('chill.' ~ eventsDetail.chillName)|trans }}</td>
+                        <td style="vertical-align: middle">{{ eventsDetail.place }}, {{ eventsDetail.address }}</td>
+                        <td style="vertical-align: middle" class="text-center">{{ eventsDetail.date|date('Y-m-d H:i') }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            {% endif %}
+            {% if eventsDetails is empty %}
+                <br />
+                <div class="alert alert-info" role="alert">
+                    There is no items
+                </div>
+            {% endif %}
+            <br />
+            <hr />
+            <h1 class="color-text">Events in which participes {{ userDetails.firstname }} {{ userDetails.lastname }}</h1>
+            {% if eventsParticipesDetails is not empty %}
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th width="10%">ID</th>
+                        <th width="10%"></th>
+                        <th width="20%">Category</th>
+                        <th width="20%">Chill</th>
+                        <th width="20%">Place</th>
+                        <th width="20%" class="text-center">Date</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for eventsParticipe in eventsParticipesDetails %}
+                        <tr>
+                            <td style="vertical-align: middle"># {{ eventsParticipe.eventid }}</td>
+                            <td style="vertical-align: middle"><img src="/images/chills/{{ eventsParticipe.chillName }}.svg" /></td>
+                            <td style="vertical-align: middle">{{ eventsParticipe.categoryName }}</td>
+                            <td style="vertical-align: middle">{{ ('chill.' ~ eventsParticipe.chillName)|trans }}</td>
+                            <td style="vertical-align: middle">{{ eventsParticipe.eventPlace }}, {{ eventsParticipe.eventAddress }}</td>
+                            <td style="vertical-align: middle" class="text-center">{{ eventsParticipe.eventDate|date('Y-m-d H:i') }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% endif %}
+            {% if eventsParticipesDetails is empty %}
+                <br />
+                <div class="alert alert-info" role="alert">
+                    There is no items
+                </div>
+            {% endif %}
+            <br />
+            <hr />
+            <h1 class="color-text">{{ userDetails.firstname }} {{ userDetails.lastname }} friends</h1>
+            {% if userFriends is not empty %}
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th width="10%">ID</th>
+                        <th width="20%">&nbsp;</th>
+                        <th width="50%">Details</th>
+                        <th width="20%" class="text-center">Permissions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for userFriend in userFriends %}
+                        <tr>
+                            <td style="vertical-align: middle"># {{ userFriend.friendId }}</td>
+                            <td>
+                                <img src="{{ userFriend.picture }}" />
+                            </td>
+                            <td class="vertical-middle">
+                                <strong><a href="{{ path('backend_user_details', { 'userId': userFriend.friendId }) }}">{{ userFriend.firstname }} {{ userFriend.lastname }}</a></strong><br/>
+                                {{ userFriend.email }}
+                            </td>
+                            <td class="vertical-middle">
+                                {% if 'ROLE_ADMIN' in userFriend.roles %}
+                                    <span class="label label-primary label-permission">admin</span>
+                                {% else %}
+                                    <span class="label label-info label-permission">user</span>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% endif %}
+            {% if userFriends is empty %}
+                <br />
+                <div class="alert alert-info" role="alert">
+                    There is no items
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
